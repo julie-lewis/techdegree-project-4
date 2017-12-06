@@ -99,11 +99,11 @@ for (var i = 0; i < imageSlides.length; i += 1) {
   title = imageSlides[i].title;
   caption = imageSlides[i].caption;
 // Builds up message in HTML
-  html = '<div class="slide-wrap"><img src="img/photos/thumbnails/' +
+  html = '<div class="slide"><div class="thumb"><img src="img/photos/thumbnails/' +
           thumb +
           '" alt="' +
           title +
-          '" /> <h2>' +
+          '" /></div><div class="lightbox-wrap"><div class="left"></div><div class="right"></div><div class="close">X</div><h2>' +
           title +
           '</h2> <p>' +
           caption +
@@ -111,11 +111,11 @@ for (var i = 0; i < imageSlides.length; i += 1) {
           image +
           '" alt="' +
           title +
-          '" /></div>';
+          '" /></div><!-- /lightbox --></div><!-- slide -->';
 // adds HTML content to empty array (defined above) named slides
   slides.push(html);
 // prints built up content to DOM      
-  print(slides);
+  print('<div class="slides">' + slides + '</div>');
 }
 
 
