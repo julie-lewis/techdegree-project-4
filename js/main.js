@@ -81,8 +81,6 @@ var imageSlides = [
     caption : 'I walked through this meadow of bluebells and got a good view of the snow on the mountain before the fog came in.'
   }
 ];
-//empty array for passing content
-var slides = [];
 
 //Writing to doc by interacting with DOM at div with id output
 function print(message) {
@@ -91,6 +89,8 @@ function print(message) {
   outputDiv.innerHTML = message;
 }
 
+var html = '';
+var customHTML = '';
 
 //Runs through array assigning designated value to variable
 for (var i = 0; i < imageSlides.length; i += 1) {
@@ -99,29 +99,27 @@ for (var i = 0; i < imageSlides.length; i += 1) {
   title = imageSlides[i].title;
   caption = imageSlides[i].caption;
 // Builds up message in HTML
-  html = '<div class="slide"><div class="thumb"><img src="img/photos/thumbnails/' +
+  html = '<div class="slide"><a href="img/photos/' +
+          image +
+          '" data-lightbox="gallery" data-title="' +
+          caption +
+          '" data-alt="' +
+          title +
+          '"><img src="img/photos/thumbnails/' +
           thumb +
           '" alt="' +
           title +
-          '" /></div><div class="lightbox-wrap"><div class="left"></div><div class="right"></div><div class="close">X</div><h2>' +
-          title +
-          '</h2> <p>' +
-          caption +
-          '</p> <img src="img/photos/' +
-          image +
-          '" alt="' +
-          title +
-          '" /></div><!-- /lightbox --></div><!-- slide -->';
+          '" /></a></div><!-- slide -->';
 // adds HTML content to empty array (defined above) named slides
-  slides.push(html);
+  customHTML += html;
 // prints built up content to DOM      
-  print('<div class="slides">' + slides + '</div>');
+  print('<div class="slides">' + customHTML + '</div>');
 }
 
 
-
-
-
+    lightbox.option({
+      'alwaysShowNavOnTouchDevices': true,
+    })
 
 
 

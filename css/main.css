@@ -63,19 +63,20 @@ h5 {
   margin: 10px 0 40px;
 }
 
-/*header*/
+/*Search Bar*/
 
 
 
 /*Slides*/
+
 .slides {
   margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
 }
 .slide {
-  flex: 15% 1;
-  margin: 20px 3%;
+  flex: 48% 1;
+  margin: 20px 1%;
 }
 
 .slide h2 {
@@ -89,11 +90,6 @@ h5 {
   color: #ccc;
 }
 
-.lightbox-wrap {
-  display: none;
-}
-
-
 
 /*Footer*/
 footer {
@@ -104,11 +100,28 @@ footer {
 
 /*Media Queries*/
 @media (min-width: 768px) {
+  .slides {
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  }
+  .slide {
+    flex: 30% 1;
+    margin: 20px 1.5%;
+  }
 
 }
 
-@media (max-width: 1024px) {
-
+@media (min-width: 1024px) {
+  .slides {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .slide {
+    flex: 20% 1;
+    margin: 20px 2.5%;
+  }
 }
 
 
