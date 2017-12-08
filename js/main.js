@@ -121,42 +121,7 @@ lightbox.option({
   'alwaysShowNavOnTouchDevices': true,
 })
 
-/*
 
-// Search bar
-function searchFunction() {
-  var input;
-  var filter;
-  var div;
-  var alt;
-  input = document.getElementById ('myInput');
-  filter = input.value.toLowerCase();
-  div = document.getElementById('slide');
-
-  for ( var i = 0; i < div.length; i += 1) {
-    alt = div[i].getElementTagName('img').alt[0];
-    title = div[i].getAttribute('data-title')[0];
-    if(title.toLowerCase().indexOf(filter) || alt.toLowerCase().indexOf(filter) > -1){
-      div[i].style.display = "";
-    } else {
-      div[i].style.display = 'none';
-    }
-  }
-}
-*/
-/*
-<a href="img/photos/01.jpg" data-lightbox="gallery" data-title="I love hay bales. Took this snap on a drive through the countryside past some straw fields." data-alt="Hay Bales"><img src="img/photos/thumbnails/01.jpg" alt="Hay Bales"></a>
-
-If data title || data alt > -1
-then display
-else display none
-
-
-var alt = div.document.getElementTagName('img').alt;
-
-
-
-*/
 
 $(document).ready(function () {
 
@@ -168,8 +133,7 @@ $(document).ready(function () {
         // Loop through the slide div 
         $("#slide a").each(function(){
 
-            // If the a attributes data-title and data-alt don't contain input, fade out
-            /* if ( $(this).attr('data-title').search(new RegExp(filter, "i")) && $(this).attr('data-alt').search(new RegExp(filter, "i")) < 0) { */
+            // If the a attributes data-title and data-alt don't contain input, fade out the containing div
             var title = $(this).attr('data-title').search(new RegExp(filter, "i"));
             var alt = $(this).attr('data-alt').search(new RegExp(filter, "i"));
             if ( alt & title < 0) {  
