@@ -173,11 +173,11 @@ $(document).ready(function () {
             var title = $(this).attr('data-title').search(new RegExp(filter, "i"));
             var alt = $(this).attr('data-alt').search(new RegExp(filter, "i"));
             if ( alt & title < 0) {  
-                $(this).fadeOut();
+                $(this).parent().fadeOut();
 
             // Show the div item if the phrase matches 
             } else {
-                $(this).show();
+                $(this).parent().show();
             }
         });
      });
